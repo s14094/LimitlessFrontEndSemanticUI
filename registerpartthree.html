@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>Demo</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./semantic/semantic.min.css" th:href="@{/semantic/dist/semantic.min.css}" />
+    <script src="./semantic/components/visibility.js" th:src="@{/semantic/dist/components/visibility.js}"></script>
+    <script src="./semantic/components/sidebar.js" th:src="@{/semantic/dist/components/sidebar.js}"></script>
+    <script src="./semantic/components/transition.js" th:src="@{/semantic/dist/components/transition.js}"></script>
+    <script src="./semantic/semantic.min.js" th:src="@{/semantic/dist/semantic.min.js}"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+</head>
+<body>
+<div id="myheader">
+    <script>$('#myheader').load('header.html');</script>
+</div>
+
+<div class="wrapper">
+    <form class="ui form headerslot field">
+
+        <div class="ui two column grid">
+            <div class="sixteen wide column">
+                <h1>Join Curse.y0.pl</h1>
+                <h3>Place where you can do stuff or something.</h3>
+                <div class="ui ordered steps">
+                    <div class="completed step">
+                        <div class="content">
+                            <div class="title">Research</div>
+                            <div class="description">Find this website</div>
+                        </div>
+                    </div>
+                    <div class="active step">
+                        <div class="content">
+                            <div class="title">Account</div>
+                            <div class="description">Create account here</div>
+                        </div>
+                    </div>
+                    <div class="disabled step">
+                        <div class="content">
+                            <div class="title">Have fun</div>
+                            <div class="description">Discover features of this place</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="four column row">
+                <div class="ten wide column" style="width: 500px;">
+                    <div class="field input">
+                        <label>Username</label>
+                        <label>
+                            <input type="text" name="regUsername">
+                        </label>
+                        <small>This will be your username!</small>
+                    </div>
+                    <div class="field">
+                        <label>Email Address</label>
+                        <label>
+                            <input type="email" name="regEmail">
+                        </label>
+                        <small>For spam purposes.</small>
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <label>
+                            <input type="password" name="regPassword">
+                        </label>
+                        <small>Use any password you want.</small>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <label>
+                                <input type="checkbox" tabindex="0">
+                            </label>
+                            <label>I agree to the <a href="https://realfakestudios.com/terms-conditions/">Terms and Conditions</a></label>
+                        </div>
+                    </div>
+                    <button class="ui inverted green button" type="submit">Create an account</button>
+                </div>
+
+                <div class="four wide column right floated">
+                    <div class="ui segments">
+                        <div class="ui segment">
+                            You’ll love this website
+                        </div>
+                        <div class="ui segment">
+                            <div>You may ask</div>
+                            <div>why?</div>
+                            <div class="ui bulleted list">
+                                <div class="item">Limited content</div>
+                                <div class="item">Cool frontend</div>
+                                <div class="item">And why not</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body></html>
