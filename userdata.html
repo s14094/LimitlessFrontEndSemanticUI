@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Demo</title>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./semantic/semantic.min.css" th:href="@{/semantic/dist/semantic.min.css}" />
+    <script src="./semantic/components/visibility.js" th:src="@{/semantic/dist/components/visibility.js}"></script>
+    <script src="./semantic/components/sidebar.js" th:src="@{/semantic/dist/components/sidebar.js}"></script>
+    <script src="./semantic/components/transition.js" th:src="@{/semantic/dist/components/transition.js}"></script>
+    <script src="./semantic/semantic.min.js" th:src="@{/semantic/dist/semantic.min.js}"></script>
+
+
+    <style>
+        .headerslot{
+            margin-top: 100px;
+        }
+        .wrapper {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        img {
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .imageplaceholder {
+            width: 300%;
+            height: 200px;
+
+            float: left;
+            margin: 3px;
+            padding: 3px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="myheader">
+    <script>$('#myheader').load('header.html');</script>
+</div>
+
+
+
+<div class="wrapper">
+    <form class="ui form headerslot field">
+
+        <div class="wrapper">
+            <form class="ui form headerslot field">
+
+                <div class="ui two column grid">
+                    <div class="sixteen wide column">
+                        <h1>John Reichenbach</h1>
+                        <h3>Your profile.</h3>
+                    </div>
+
+                    <div class="five column row">
+
+                        <div class="imageplaceholder five wide column left floated">
+                            <div class="image">
+                                <div class="ui medium bordered fluid image">
+                                    <img src="userimage.jpg"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ten wide column">
+
+
+                            <table class="ui definition inverted selectable table" border=1>
+                                <script>
+                                    document.querySelector('table').addEventListener('click', function(evt) {
+                                        var o = evt.target;
+
+                                        if (o.tagName === 'TD') {
+                                            o.setAttribute('value', o.innerHTML);
+                                            o.innerHTML = '<input type="text" value="' + o.innerHTML + '">' +
+                                                '<button class="cancel ui inverted red button right floated">Cancel</button>' +
+                                                '<button class="save ui inverted green button right floated">Save</button>';
+
+                                            o.querySelector('input').focus();
+                                        } else if (o.className === 'save') {
+                                            o.parentNode.innerHTML = o.parentNode.querySelector('input').value;
+                                        } else if (o.className === 'cancel') {
+                                            o.parentNode.innerHTML = o.parentNode.getAttribute('value');
+                                        }
+                                    });
+
+                                </script>
+
+                                <tr>
+                                    <th style="padding-left: 20px">Name</th>
+                                    <td>John</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Surname</th>
+                                    <td>Reichenbach</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Email Address</th>
+                                    <td>john.reichenbach@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Birthday</th>
+                                    <td>15-03-1954</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Pesel</th>
+                                    <td>1954031533423</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Medicine</th>
+                                    <td>paracetamol 12:00,16:00</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Ticket name</th>
+                                    <td>ToLondon</td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Guide dog</th>
+                                    <td>
+                                        <input type="checkbox" name="example">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="padding-left: 20px">Wheel chair</th>
+                                    <td>
+                                        <input type="checkbox" name="example">
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <div class="ui divider"></div>
+                            <div class="ui orange inverted button" data-tooltip="Click on your data to change it!" data-position="right center">
+                                Change your settings
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
