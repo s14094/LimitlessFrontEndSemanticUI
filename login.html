@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-
 <head>
-    <title>Demo</title>
+    <title>Login</title>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -15,6 +14,53 @@
 
     <link rel="stylesheet" type="text/css" href="css/custom.css"/>
 
+
+    <script>
+        $(document)
+            .ready(function() {
+                $('.ui.form')
+                    .form({
+                        fields: {
+                            email: {
+                                identifier  : 'email',
+                                rules: [
+                                    {
+                                        type   : 'empty',
+                                        prompt : 'Please enter your e-mail'
+                                    },
+                                    {
+                                        type   : 'email',
+                                        prompt : 'Please enter a valid e-mail'
+                                    }
+                                ]
+                            },
+                            password: {
+                                identifier  : 'password',
+                                rules: [
+                                    {
+                                        type   : 'empty',
+                                        prompt : 'Please enter your password'
+                                    },
+                                    {
+                                        type   : 'length[6]',
+                                        prompt : 'Your password must be at least 6 characters'
+                                    }
+                                ]
+                            }
+                        }
+                    })
+                ;
+            })
+        ;
+    </script>
+
+    <style>
+        .ui.message .list:not(.ui) li:before{
+            display: none !important;
+            content: "";
+        }
+    </style>
+
 </head>
 <body style=" background-color: #ededf4">
 <div>
@@ -22,10 +68,10 @@
         <script>$('#myheader').load('header.html');</script>
     </div>
 
-    <div class="wrapper" style="width: 400px;">
-        <form class="ui form headerslot field">
 
-            <div class="column">
+    <div class="wrapper" style="width: 400px;">
+        <form class="ui form headerslot field" id="example">
+                        <div class="column">
                 <h2 class="ui blue image header">
                     <img src="images/userimage.png" class="image">
                     <div class="content">
@@ -37,7 +83,7 @@
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
-                                <input type="text" name="email" placeholder="E-mail address">
+                                <input type="text" name="email" id="loginInput" placeholder="E-mail address">
                             </div>
                         </div>
                         <div class="field">
@@ -47,7 +93,7 @@
                             </div>
                         </div>
 
-                        <div class="ui fluid large inverted green submit button">Login</div>
+                        <div class="ui fluid large inverted green submit button" id="buttonLogin">Login</div>
                     </div>
 
                     <div class="ui error message"></div>
