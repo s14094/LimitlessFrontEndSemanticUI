@@ -59,21 +59,27 @@
             display: none !important;
             content: "";
         }
+        .backimage{
+            background-image: url("./images/sky3.jpeg");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
     </style>
 
 </head>
-<body style=" background-color: #ededf4">
+<body class="backimage">
 <div>
     <div id="myheader">
         <script>$('#myheader').load('header.html');</script>
     </div>
 
-
     <div class="wrapper" style="width: 400px;">
         <form class="ui form headerslot field" id="example">
             <div class="column">
                 <h2 class="ui blue image header">
-                    <img src="images/userimage.png" class="image">
+                    <i class="user icon"></i>
                     <div class="content">
                         Log-in to your account
                     </div>
